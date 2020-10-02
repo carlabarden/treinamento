@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8"/>
+    <title> JS </title>
+    </head>
+    <body>
+        <script>
+        
+            function imprimir(usuario){
+
+                for (let u of usuario){
+                    
+                    str = "O " + u.nome + " possui as habilidades: " +
+                    u.habilidades.join(', ');
+                    console.log(str); 
+                } 
+                
+            }
+        
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+           
+                      
+            imprimir(usuarios);
+            
+        </script>       
+    </body> 
+</html
+
+
