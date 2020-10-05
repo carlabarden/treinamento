@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8"/>
+    <title> JS </title>
+    </head>
+    <body>
+        <div id="app">
+            <button class="botao"> Quadrado! </button>
+        </div>
+    
+        <script>
+
+        var btn_element = document.querySelector('button.botao');
+        
+        btn_element.onclick = function(){
+        
+            //linha em branco
+            var lin_element = document.createElement('br');
+            
+            var box_element = document.createElement('div');
+            //box_element.setAttribute('class', 'box');
+            box_element.style.width = '100px';
+            box_element.style.height = '100px';
+            box_element.style.backgroundColor = '#000';
+            
+            box_element.classList.add('box');
+            
+            document.body.appendChild(lin_element);
+            document.body.appendChild(box_element);
+        }
+        
+        </script>       
+    </body> 
+</html
+
+
