@@ -2,6 +2,7 @@
 // O Model é "uma tabela" no BD, ou, ainda, uma estrutura de dados
 
 const mongoose = require('mongoose');
+const mongoose_paginate = require('mongoose-paginate');
 
 const ProductSchema = new mongoose.Schema({
     title:{
@@ -21,5 +22,7 @@ const ProductSchema = new mongoose.Schema({
         default: Date.now,
     },
 });
+
+ProductSchema.plugin(mongoose_paginate);
 
 module.exports = mongoose.model('Product', ProductSchema);

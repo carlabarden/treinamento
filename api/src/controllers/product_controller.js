@@ -6,7 +6,12 @@ const product = require('../models/product');
 module.exports = {
     //todos os produtos
     async index(req, res){
-        const prod = await product.find();
+        //const prod = await product.find();
+        const { page = 1 } = req.query;
+        const prod = await product.paginate({}, {
+            page: page,
+            limit: 10
+        });
         return res.json(prod);
     }, 
 
