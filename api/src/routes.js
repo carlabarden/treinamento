@@ -8,6 +8,7 @@ const product_controller = require("./controllers/product_controller");
 //req == requisição que está sendo feita ao servidor
 //res == resposta à requisição
 routes.get('/products', product_controller.index);
+routes.post('/products',  product_controller.store);
 
 
 // exportando arquivo
