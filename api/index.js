@@ -10,7 +10,8 @@ app.use(express.json());
 mongoose.connect('mongodb://localhost:27017/nodeapi',{ 
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false 
 
 });
 require_dir('./src/models/');
