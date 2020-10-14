@@ -92,6 +92,198 @@ const por2 = usuarios.map(function(user){
 });
 
 const filter = por2.filter(user => user.idade < 50)
-
 console.log('2.3');
 console.log(filter);
+
+/* 3o exercício
+Converta as funções nos seguintes trechos de código em Arrow Functions:
+ */
+
+
+// 3.1
+/* const arr = [1, 2, 3, 4, 5];
+arr.map(function(item) {
+return item + 10;
+}); */
+const arr = [1, 2, 3, 4, 5];
+const ret = arr.map(item => item + 10);
+console.log('3.1');
+console.log(ret);
+
+
+/* // 3.2
+// Dica: Utilize uma constante pra function
+const usuario = { nome: 'Diego', idade: 23 };
+function mostraIdade(usuario) {
+return usuario.idade;
+}
+mostraIdade(usuario);
+ */
+
+const usu = { nome: 'Maria', idade: 23 };
+const mostra_idade = (user) => (user.idade);
+console.log('3.2')
+console.log(mostra_idade(usu));
+
+
+/* // 3.3
+// Dica: Utilize uma constante pra function
+const nome = "Diego";
+const idade = 23;
+function mostraUsuario(nome = 'Diego', idade = 18) {
+return { nome, idade };
+}
+mostraUsuario(nome, idade);
+mostraUsuario(nome);
+ */
+
+ const name = 'Maria';
+ const age  = 27;
+
+const show_user = (name = 'João', age = '25') => ({name, age});
+console.log('3.3');
+console.log(show_user(name, age));
+console.log(show_user(name));
+
+
+/* // 3.4
+const promise = function() {
+    return new Promise(function(resolve, reject) {
+        return resolve();
+})
+} */
+
+//?
+const promise = (res, rej) => new Promise(res);
+
+/* 4o exercício
+4.1 Desestruturação simples
+A partir do seguinte objeto:
+const empresa = {
+nome: 'Rocketseat',
+endereco: {
+cidade: 'Rio do Sul',
+estado: 'SC',
+}
+};
+Utilize a desestruturação para transformar as propriedades nome, cidade e estado em variáveis, no
+fim deve ser possível fazer o seguinte:
+console.log(nome); // Rocketseat
+console.log(cidade); // Rio do Sul
+console.log(estado); // SC
+ */
+
+ const empresa = {
+     nome: 'TestAr',
+     endereco: {
+         cidade: 'Rio Grande',
+         estado: 'RS',
+     },
+ };
+
+ const {nome, endereco:{cidade, estado}} = empresa;
+ console.log('4.1');
+ console.log(nome);
+ console.log(cidade);
+ console.log(estado);
+
+/*  4.2 Desestruturação em parâmetros
+ Na seguinte função:
+ function mostraInfo(usuario) {
+ return `${usuario.nome} tem ${usuario.idade} anos.`;
+ }
+ mostraInfo({ nome: 'Diego', idade: 23 })
+ Utilize a desestruturação nos parâmetros da função para buscar o nome e idade do usuário
+ separadamente e a função poder retornar apenas:
+ return `${nome} tem ${idade} anos.`; */
+
+ function mostra_info({nome, idade}){
+     return `${nome} tem ${idade} anos.`;
+ }
+
+console.log('4.2');
+console.log(mostra_info(usu));
+
+/* 5o Exercício
+Utilizando o operador de rest/spread ( ... ) realize as seguintes operações:
+5.1 Rest
+A partir do array: const arr = [1, 2, 3, 4, 5, 6] , defina uma variável x que recebe a primeira
+posição do vetor e outra variável y que recebe todo restante dos dados.
+console.log(x); // 1
+console.log(y); // [2, 3, 4, 5, 6]
+Crie uma função que recebe inúmeros parâmetros e retorna a soma de todos eles:
+// function soma...
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+console.log(soma(1, 2)); // 3 */
+
+const arr0 = [1, 2, 3, 4, 5, 6];
+const [x, ...y] = arr0;
+console.log('5.1');
+console.log(x);
+console.log(y);
+
+function soma(...params){
+    return params.reduce((item, prox) => item + prox);
+}
+console.log(soma(1, 2, 3, 4, 5, 6));
+console.log(soma(1, 2));
+
+/* 5.2 Spread
+A partir do objeto e utilizando o operador spread:
+const usuario = {
+nome: 'Diego',
+idade: 23,
+endereco: {
+cidade: 'Rio do Sul',
+uf: 'SC',
+pais: 'Brasil',
+}
+};
+Crie uma variável usuario2 que contenha todos os dados do usuário porém com nome Gabriel .
+Crie uma variável usuario3 que contenha todos os dados do usuário porém com cidade Lontras . */
+
+const user1 = {
+    nome: 'João',
+    idade: 33,
+    endereco: {
+        cidade: 'Rio Grande',
+        uf: 'RS',
+        pais: 'Brasil',
+    },
+};
+
+const user2 = {...user1, nome: 'Gabriel'};
+const user3 = {...user1, endereco:{...user1.endereco, cidade: 'Lontras'}};
+console.log('5.2');
+console.log(user1);
+console.log(user2);
+console.log(user3);
+
+/* 6o Exercício
+Converta o seguinte trecho de código utilizando Template Literals:
+const usuario = 'Diego';
+const idade = 23;
+console.log('O usuário ' + usuario + ' possui ' + idade + ' anos'); */
+
+const tl = (`Meu nome é ${name} e tenho ${age} anos.`);
+console.log('6');
+console.log(tl);
+
+/* 7o exercício
+Utilize a sintaxe curta de objetos (Object Short Syntax) no seguinte objeto:const nome = 'Diego';
+const idade = 23;
+const usuario = {
+nome: nome,
+idade: idade,
+cidade: 'Rio do Sul',
+}; */
+const obj7o = {
+    name: name,
+    age: age,
+    city: 'New York',
+};
+console.log('7');
+console.log(obj7o);
+
+
+
