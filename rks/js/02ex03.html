@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8"/>
+    <title> JS </title>
+    </head>
+    <body>
+        <div id="app">
+        </div>
+
+        <script>
+        
+        var nomes = ["João", "Maria", "José"];
+        
+        var container = document.querySelector('#app');
+        var lista = document.createElement('ul');
+
+        for (n of nomes){
+            
+            var item = document.createElement('li');
+            var txt  = document.createTextNode(n);
+            
+            //colocando texto no item
+            item.appendChild(txt);
+            //colocando item na lista
+            lista.appendChild(item);
+        }  
+          
+        container.appendChild(lista);
+
+        </script>       
+    </body> 
+</html
+
+

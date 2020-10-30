@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8"/>
+    <title> JS </title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Add</button>
+        </div>
+
+        <script>
+        /**Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista denomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.*/
+
+        function criar_itens(itens){
+            
+            for (i of itens){
+            
+            var item = document.createElement('li');
+            var txt  = document.createTextNode(i);
+            
+            //colocando texto no item
+            item.appendChild(txt);
+            //colocando item na lista
+            lista.appendChild(item);
+            }   
+        }
+        
+        function adicionar(){
+        
+            var entrada = document.querySelector('input[name=nome]');
+            var texto = [entrada.value];
+            
+            criar_itens(texto);
+            entrada.value = ""; 
+        }
+        
+        var nomes = ["João", "Maria", "José"];
+        
+        var container = document.querySelector('#app');
+        var lista = document.createElement('ul');
+        var botao = document.querySelector('body div#app button');
+        criar_itens(nomes);         
+        container.appendChild(lista);
+        
+        botao.onclick = function(){
+            adicionar();
+        }
+        
+        </script>       
+    </body> 
+</html
+
+
